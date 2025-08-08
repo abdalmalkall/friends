@@ -24,14 +24,14 @@ const Index = () => {
     try {
       await navigator.clipboard.writeText(number);
       toast({
-        title: "✅ تم نسخ الرقم!",
-        description: `افتح تطبيق ${label} وأكمل التحويل.`,
+        title: "✅ الرقم اننسخ!",
+        description: `فتح تطبيق ${label} وكمّل تحويلك بسهولة.`,
       });
       return true;
     } catch (error) {
       toast({
-        title: "❌ فشل نسخ الرقم!",
-        description: `يرجى نسخ الرقم يدوياً: ${number}`,
+        title: "❌ ما قدرنا نننسخ الرقم!",
+        description: `انسخ الرقم يدويًا: ${number}`,
         variant: "destructive",
       });
       return false;
@@ -49,22 +49,20 @@ const Index = () => {
       await new Promise((r) => setTimeout(r, 500));
     }
     toast({
-      title: "ℹ️ لم نتمكن من فتح التطبيق تلقائياً",
-      description: `يرجى فتح تطبيق ${label} يدوياً واستخدام الرقم المنسوخ.`,
+      title: "ℹ️ ما قدرنا نفتح التطبيق تلقائيًا",
+      description: `افتح تطبيق ${label} بنفسك واستعمل الرقم اللي نسخته.`,
     });
   };
 
   const handleUWallet = async () => {
     const copied = await copyAndNotify("uWallet", NUM_UWALLET);
-  
   };
 
   const handleDinarak = async () => {
     const copied = await copyAndNotify("Dinarak", NUM_DINARAK);
-  
   };
 
-  const whatsappText = encodeURIComponent("مرحباً، أرغب بشراء من سوبر ماركت الأصدقاء");
+  const whatsappText = encodeURIComponent("مرحبا، حابب أطلب من سوبر ماركت الأصدقاء");
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
@@ -75,10 +73,10 @@ const Index = () => {
       >
         <div className="container max-w-3xl py-12 md:py-16 text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-[hsl(var(--brand-gold))]">
-             سوبر ماركت الأصدقاء
+            سوبر ماركت الأصدقاء
           </h1>
           <p className="mt-3 text-[hsl(var(--brand-text-muted))]">
-            تجربة شراء راقية بخدمة توصيل فورية وطرق دفع إلكترونية موثوقة.
+            كل اللي بدك يوصلك لباب بيتك، بسرعة وراحة تامة.
           </p>
         </div>
       </header>
@@ -88,10 +86,10 @@ const Index = () => {
         <section className="section-muted">
           <div className="container max-w-2xl py-10 md:py-12">
             <h2 className="text-2xl font-bold text-[hsl(var(--brand-gold))] mb-2">
-              طرق الدفع المتوفرة
+              طرق الدفع اللي تناسبك
             </h2>
             <p className="text-muted-foreground mb-6">
-              اختر طريقة الدفع الأنسب لك — ضغطة واحدة، ورقم المحفظة صار عندك. نحن نهتم أن تكون التجربة سهلة كما تستحق.
+              إختار طريقة الدفع اللي تحبها — نسخ الرقم بضغطة وحدة، وانتبه على راحتك!
             </p>
 
             <div className="grid gap-3">
@@ -107,8 +105,7 @@ const Index = () => {
             <Alert className="mt-4 border-[hsl(var(--brand-gold))] bg-[hsl(var(--section-muted))]">
               <AlertTitle>📌 ملاحظة مهمة</AlertTitle>
               <AlertDescription>
-                عند الضغط على زر الدفع، يتم نسخ الرقم تلقائيًا. افتح التطبيق المناسب (uWallet أو Dinarak) وأتم التحويل بكل سهولة.
-              </AlertDescription>
+        عند الضغط على زر الدفع، يتم نسخ الرقم تلقائيًا. افتح التطبيق المناسب (uWallet أو Dinarak) وأتم التحويل بكل سهولة.              </AlertDescription>
             </Alert>
           </div>
         </section>
@@ -117,16 +114,16 @@ const Index = () => {
         <section>
           <div className="container max-w-2xl py-10 md:py-12">
             <h2 className="text-2xl font-bold text-[hsl(var(--brand-gold))] mb-2">
-              🚚 خدمة التوصيل إلى باب بيتك
+              🚚 التوصيل لباب بيتك
             </h2>
             <p className="text-muted-foreground mb-6">
-              كل شيء يصلك… وكأنك معنا في السوبر ماركت. اطلب، وندبّر لك ما تحتاجه بخدمة توصيل سريعة ولبقة.
+           تطلب، وإحنا نوصل… يمكن قبل ما تفتح الباب!
             </p>
 
             <div className="grid gap-3 md:grid-cols-2">
               <Button variant="call" size="lg" asChild className="w-full">
                 <a href={`tel:${CONTACT_PHONE}`} aria-label="اتصل الآن">
-                  📞 اتصل الآن
+                  📞 اتصل فينا بسهولة
                 </a>
               </Button>
 
@@ -148,13 +145,11 @@ const Index = () => {
         <section className="section-muted">
           <div className="container max-w-2xl py-10 md:py-12 text-center animate-fade-in">
             <p className="text-lg md:text-xl">
-              "لا تضيّع وقتك في البحث... الجودة، السعر المناسب، والخدمة الراقية تجدها كلها هنا – في سوبر ماركت الأصدقاء."
+              "تعبت تدور؟ خلّي كل شي عندنا… جودة، سعر مناسب، وخدمة تريح بالك."
             </p>
           </div>
         </section>
       </main>
-
- 
     </div>
   );
 };
