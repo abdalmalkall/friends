@@ -56,16 +56,12 @@ const Index = () => {
 
   const handleUWallet = async () => {
     const copied = await copyAndNotify("uWallet", NUM_UWALLET);
-    if (copied) {
-      tryOpenDeepLink(["uwallet://", "com.uwallet://"], NUM_UWALLET, "uWallet");
-    }
+  
   };
 
   const handleDinarak = async () => {
     const copied = await copyAndNotify("Dinarak", NUM_DINARAK);
-    if (copied) {
-      tryOpenDeepLink(["dinarak://", "com.dinarak://"], NUM_DINARAK, "Dinarak");
-    }
+  
   };
 
   const whatsappText = encodeURIComponent("مرحباً، أرغب بشراء من سوبر ماركت الأصدقاء");
